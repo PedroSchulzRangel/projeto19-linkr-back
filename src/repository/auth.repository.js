@@ -10,3 +10,10 @@ export async function insertNewUser(email, encryptedPassword, username, pictureU
         (email,password,username,"pictureUrl")
         VALUES ($1,$2,$3,$4);`,[email, encryptedPassword, username, pictureUrl])
 }
+
+export async function createSessionDb(userId, token){
+    return db.query(
+        `INSERT INTO sessions ("userId", token) VALUES ($1, $2);`,
+        [userId, token]
+    )
+}
