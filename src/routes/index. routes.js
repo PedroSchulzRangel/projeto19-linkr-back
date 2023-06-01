@@ -3,4 +3,6 @@ import authRouter from "./auth.routes.js";
 
 const indexRouter= Router()
 
-export default indexRouter;
+indexRouter.use(authRouter)
+
+export default indexRouter
