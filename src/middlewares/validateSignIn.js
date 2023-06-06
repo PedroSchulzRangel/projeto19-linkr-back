@@ -1,5 +1,5 @@
 
-export default function validateSigIn(schema) {
+export default function validateSignIn(schema) {
     return (req, res, next) => {
         const validation = schema.validate(req.body, { abortEarly: false })
         if (validation.error) {

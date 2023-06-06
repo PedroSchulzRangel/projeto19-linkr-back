@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
 
 
-export async function sigIn(req, res) {
+export async function signIn(req, res) {
     //userId e token
     const { email, password } = req.body
     try {
