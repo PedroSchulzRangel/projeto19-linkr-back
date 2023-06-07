@@ -2,11 +2,9 @@
 import { searchEmailFromDB, insertNewUser, createSessionDb } from "../repository/auth.repository.js"
 import { getUserByEmailDB } from "../repository/user.repository.js";
 import bcrypt from "bcrypt";
-import { v4 as uuid } from "uuid";
 
+export async function signIn(req, res) {
 
-export async function sigIn(req, res) {
-    //userId e token
     const { email, password } = req.body
     try {
 
