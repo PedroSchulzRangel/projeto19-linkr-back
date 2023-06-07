@@ -10,3 +10,6 @@ export async function insertNewUser(email, encryptedPassword, username, pictureU
         (email,password,username,"pictureUrl")
         VALUES ($1,$2,$3,$4);`,[email, encryptedPassword, username, pictureUrl])
 }
+export async function deleteSession(token){
+    await db.query(`DELETE from sessions WHERE token = ($1)`,[token])  
+}
