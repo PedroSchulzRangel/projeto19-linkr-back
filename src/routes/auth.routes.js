@@ -3,7 +3,7 @@ import { Router } from "express"
 import validateSignIn from "../middlewares/validateSignIn.js"
 import { signInSchema } from "../schemas/sigIn.schema.js"
 import { signUpSchema } from "../schemas/signUp.schema.js"
-import { authValidation } from "../middlewares/authValidation.js"
+import { authValidation } from "../middlewares/authValidation.middleware.js"
 
 import { Logout } from "../controllers/auth.controllers.js"
 import { signIn } from "../controllers/auth.controllers.js"
