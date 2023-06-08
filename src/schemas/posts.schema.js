@@ -1,4 +1,4 @@
-import Joi from "joi";
+import joi from "joi";
 
 export const createPostSchema = joi.object({
     description: joi.string(),

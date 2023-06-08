@@ -1,6 +1,6 @@
 import { Router } from "express";
 import validateSchema from "../middlewares/validateSchema.middlewares.js";
-import { createPostSchema, newPostSchema } from "../schemas/posts.schema.js";
+import { createPostSchema } from "../schemas/posts.schema.js";
 import { createPost } from "../controllers/posts.controllers.js";
 
 
