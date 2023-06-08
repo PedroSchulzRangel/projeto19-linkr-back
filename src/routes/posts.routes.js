@@ -10,4 +10,5 @@ const postsRouter = Router()
 postsRouter.post("/new-post", authValidation, validateSchema(postSchema), createPost)
 postsRouter.delete("/delete/:postId", authValidation, deletePost);
 postsRouter.put("/posts/:id", authValidation, validateSchema(postSchema), editPost);
+
 export default postsRouter

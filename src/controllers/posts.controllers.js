@@ -7,8 +7,8 @@ export async function createPost(req, res){
     try {
         await createPostDB(user.id, url, description);
         return res.sendStatus(201);        
-    } catch (error) {
-        return res.status(500).send(error.message);
+    } catch (err) {
+        return res.status(500).send(err.message);
     }
 }
 export async function deletePost(req, res){
@@ -16,19 +16,18 @@ export async function deletePost(req, res){
     try {        
          await deletePostDB(req.params,user.id);
         res.sendStatus(200);
-    } catch (error) {
-        return res.status(500).send(error.message);
+    } catch (err) {
+        return res.status(500).send(err.message);
     }
 }
 
 export async function editPost(req,res){
     const { description } = req.body;
     const { id } = req.params;
-    const user = res.locals.user;
     try {
         await editPostDB(description, id);
         res.sendStatus(200)
-    } catch (error) {
-        return res.status(500).send(error.message);
+    } catch (err) {
+        return res.status(500).send(err.message);
     }    
 }
