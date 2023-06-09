@@ -1,7 +1,7 @@
 import { db } from "../database/database.connection.js";
 
-export async function createPostDB(userId, url, description){
-    const results = db.query(`INSERT INTO "posts" ("userId", "linkUrl", "description") VALUES ($1, $2, $3) RETURNING id;`, [userId, url, description]);
+export async function createPostDB(userId, linkUrl, description){
+    const results = await db.query(`INSERT INTO "posts" ("userId", "linkUrl", "description") VALUES ($1, $2, $3) RETURNING id;`, [userId, linkUrl, description]);
     return results;
 }
 

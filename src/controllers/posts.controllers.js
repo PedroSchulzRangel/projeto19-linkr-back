@@ -2,10 +2,9 @@ import { createPostDB, deletePostDB, editPostDB } from "../repository/posts.repo
 
 
 export async function createPost(req, res){
-    const {description, url} = req.body;
-    const user = res.locals.user;
+    const {description, linkUrl, userId} = req.body;
     try {
-        await createPostDB(user.id, url, description);
+        await createPostDB(userId, linkUrl, description);
         return res.sendStatus(201);        
     } catch (err) {
         return res.status(500).send(err.message);
