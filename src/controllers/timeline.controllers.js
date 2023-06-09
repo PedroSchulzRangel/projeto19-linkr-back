@@ -1,5 +1,5 @@
+
 import { getPostsDB } from "../repository/timeline.repotory.js"
-import urlMetadata from "url-metadata"
 
 export async function getAllPosts(req, res) {
 
@@ -11,5 +11,3 @@ export async function getAllPosts(req, res) {
     } catch (err) {
         res.status(500).send("An error occured while trying to fetch the posts, please refresh the page", err.message)
     }
-
-}
