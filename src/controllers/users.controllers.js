@@ -19,7 +19,7 @@ export async function getUserById (req, res){
 }
 
 export async function getUsersByName(req,res){
-    const {username}=req.body
+    const {username}=req.params
     try{
         const searchedUsers = await searchForUserName(username)
         res.status(200).send(searchedUsers)
