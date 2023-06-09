@@ -7,10 +7,10 @@ export async function createPostDB(userId, url, description){
 
 export async function deletePostDB(params, userId) {
     const { postId } = params;
-    const results = await db.query(`DELETE FROM posts WHERE id=$1 AND "userId"=$2`, [postId, userId]);
+    const results = await db.query(`DELETE FROM posts WHERE id=$1 AND "userId"=$2;`, [postId, userId]);
     return results
 }
 export function editPostDB(id, description) {
-	const results = db.query(`UPDATE postsSET description = $1 WHERE id = $2 RETURNING *`, [description, id]);
+	const results = db.query(`UPDATE postsSET description = $1 WHERE id = $2 RETURNING *;`, [description, id]);
     return results
 }
