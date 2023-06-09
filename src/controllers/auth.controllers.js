@@ -2,6 +2,7 @@ import { searchEmailFromDB, insertNewUser, createSessionDb, deleteSession } from
 import { getUserByEmailDB } from "../repository/user.repository.js";
 
 import bcrypt from "bcrypt";
+import {v4 as uuid} from "uuid";
 
 export async function signIn(req, res) {
 
