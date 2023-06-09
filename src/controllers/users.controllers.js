@@ -1,4 +1,4 @@
-import { searchForUserId, searchForUserPosts} from "../repository/user.repository.js"
+import { searchForUserId, searchForUserPosts, searchForUserName} from "../repository/user.repository.js"
 
 export async function getUserById (req, res){
     
@@ -14,6 +14,17 @@ export async function getUserById (req, res){
         res.status(200).send(userPosts)
 
     } catch (err) {
+        res.status(500).send(err.message)
+    }
+}
+
+export async function getUsersByName(req,res){
+    const {username}=req.params
+    try{
+        const searchedUsers = await searchForUserName(username)
+        res.status(200).send(searchedUsers)
+    }
+    catch(err){
         res.status(500).send(err.message)
     }
 }
