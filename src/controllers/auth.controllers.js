@@ -1,6 +1,6 @@
-
-import { searchEmailFromDB, insertNewUser, createSessionDb } from "../repository/auth.repository.js"
+import { searchEmailFromDB, insertNewUser, createSessionDb, deleteSession } from "../repository/auth.repository.js"
 import { getUserByEmailDB } from "../repository/user.repository.js";
+
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
 
@@ -44,6 +44,16 @@ export async function signUp(req, res) {
         res.sendStatus(201)
 
     } catch (err) {
+        res.status(500).send(err.message)
+    }
+}
+export async function Logout(req,res){
+    const {token}=res.locals.session
+    try{
+        deleteSession(token)
+        res.sendStatus(200)
+    }
+    catch(err){
         res.status(500).send(err.message)
     }
 }

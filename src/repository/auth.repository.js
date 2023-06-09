@@ -17,3 +17,7 @@ export async function createSessionDb(userId, token){
         [userId, token]
     )
 }
+
+export async function deleteSession(token){
+    return db.query(`DELETE from sessions WHERE token = ($1)`,[token])
+}
