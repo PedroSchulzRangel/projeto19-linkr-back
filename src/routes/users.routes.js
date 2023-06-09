@@ -4,7 +4,7 @@ import { authValidation } from "../middlewares/authValidation.middleware.js"
 
 const usersRouter = Router()
 
-usersRouter.get("/user/:id", getUserById)
+usersRouter.get("/user/:id", authValidation, getUserById)
 usersRouter.get("/user/:username",authValidation, getUsersByName)
 
 export default usersRouter
