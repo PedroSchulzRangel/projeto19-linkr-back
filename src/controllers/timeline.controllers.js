@@ -9,5 +9,6 @@ export async function getAllPosts(req, res) {
 
         res.status(200).send(posts)
     } catch (err) {
-        res.status(500).send("An error occured while trying to fetch the posts, please refresh the page", err.message)
+        res.status(500).send( err.message)
     }
+}
