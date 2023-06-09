@@ -1,36 +1,27 @@
 {
   "name": "projeto19-linkr-back",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/app.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./src/app.js",
-    "dev": "npx nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PedroSchulzRangel/projeto19-linkr-back.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PedroSchulzRangel/projeto19-linkr-back/issues"
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   },
-  "homepage": "https://github.com/PedroSchulzRangel/projeto19-linkr-back#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.1.0",
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "joi": "^17.9.2",
+    "node-fetch": "^3.3.1",
     "pg": "^8.11.0",
     "url-metadata": "^3.0.1",
     "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
   }
 }
