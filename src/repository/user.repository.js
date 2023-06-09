@@ -12,3 +12,6 @@ export function searchForUserPosts(id){
     return db.query(`SELECT u."pictureUrl", u.username, p.description, p."linkUrl", p.likes
         FROM posts p JOIN users u ON u.id=p."userId" WHERE p."userId"=$1`,[id])
 }
+export function searchForUserName(username){
+    return db.query(`SELECT * FROM users WHERE username LIKE %$1%;`,[username])
+}
