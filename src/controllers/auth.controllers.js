@@ -9,7 +9,7 @@ export async function signIn(req, res) {
     try {
 
         const user = await getUserByEmailDB(email)
-        console.log(user)
+        console.log(user.rows)
 
         if (user.rowCount === 0) return res.status(401).send({ message: "E-mail não cadastrado!" })
 

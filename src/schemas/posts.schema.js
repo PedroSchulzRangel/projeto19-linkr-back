@@ -2,5 +2,6 @@ import Joi from "joi";
 
 export const createPostSchema = joi.object({
     description: joi.string(),
-    url: joi.string().uri().required()
+    userId :joi.number().required(),
+    linkUrl: joi.string().uri().required()
 })
